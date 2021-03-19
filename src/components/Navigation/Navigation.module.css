@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+}
+
+.nav__list.active {
+  color: rgb(71, 114, 255);
+  font-weight: 700;
+}
