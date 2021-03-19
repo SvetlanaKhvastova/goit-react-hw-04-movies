@@ -1,0 +1,2 @@
+(this["webpackJsonpgoit-react-hw-04-movies"]=this["webpackJsonpgoit-react-hw-04-movies"]||[]).push([[16],{79:function(o,e,t){o.exports={footer:"Footer_footer__1eCZe"}}}]);
+//# sourceMappingURL=16.654810d8.chunk.js.map
