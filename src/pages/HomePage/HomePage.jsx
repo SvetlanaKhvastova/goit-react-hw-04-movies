@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ListFilms from '../../components/ListFilms/ListFilms';
 import services from '../../services/services';
+import s from './HomePage.module.css';
 
 class HomePage extends Component {
   state = {
@@ -19,7 +20,7 @@ class HomePage extends Component {
     const { results } = this.state;
 
     return (
-      <div>
+      <div className={s.home__page}>
         <ListFilms films={results} {...this.props} />
       </div>
     );

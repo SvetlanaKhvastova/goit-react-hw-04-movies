@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import defaultBackdrop from '../../images/default_backdrop.jpg';
 import s from './ListFilms.module.css';
 
 const BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w300';
@@ -23,7 +24,7 @@ const ListFilms = ({ films, location }) => {
                     src={
                       poster_path
                         ? `${BASE_IMAGE_URL}${poster_path}`
-                        : 'placeholder'
+                        : defaultBackdrop
                     }
                     alt={original_name}
                     className={s.ImageGalleryItem_image}
@@ -48,4 +49,4 @@ ListFilms.propTypes = {
   ),
 };
 
-export default ListFilms;
+export default withRouter(ListFilms);

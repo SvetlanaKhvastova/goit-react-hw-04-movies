@@ -1,5 +1,5 @@
 import { Component, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import s from './App.css';
 
 import Header from './components/Header/Header';
@@ -23,9 +23,9 @@ class App extends Component {
           <Suspense fallback={<Spinner />}>
             <Switch>
               {routes.map(route => {
-                console.log(route);
                 return <Route {...route} />;
               })}
+              <Redirect to={'/'} />
             </Switch>
           </Suspense>
         </Main>

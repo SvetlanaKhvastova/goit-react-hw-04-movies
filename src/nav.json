@@ -8,22 +8,23 @@
       "exact": true
     }
   },
+ 
   {
     "id": "2",
-    "component": "./pages/MovieDetailsPage/MovieDetailsPage",
-    "name": "MovieDetailsPage",
-    "props": {
-      "to": "/movies/:movieId",
-      "exact": true
-    }
-  },
-  {
-    "id": "3",
     "component": "./pages/MoviesPage/MoviesPage",
     "name": "MoviesPage",
     "props": {
       "to": "/movies",
       "exact": true
+    }
+  },
+   {
+    "id": "3",
+    "component": "./pages/MovieDetailsPage/MovieDetailsPage",
+    "name": "MovieDetailsPage",
+    "props": {
+      "to": "/movies/:movieId",
+      "exact": false
     }
   }
 ]

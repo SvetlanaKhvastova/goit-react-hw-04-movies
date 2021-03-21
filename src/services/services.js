@@ -3,11 +3,11 @@ let key = `ca68a7af060f5e9f7b7eefce94561f3e`;
 axios.defaults.baseURL = `https://api.themoviedb.org/3/`;
 
 async function getTrending() {
-  let url = `trending/all/day?api_key=${key}`;
+  let url = `trending/movie/week?api_key=${key}`;
   const response = await axios.get(url);
   const data = await response.data;
   const results = await data.results;
-  console.log(results);
+  // console.log(results);
   return results;
 }
 
@@ -16,28 +16,25 @@ async function searchMovies(search) {
   const response = await axios.get(url);
   const data = await response.data;
   const results = await data.results;
-  console.log(results);
+  // console.log(results);
   return results;
 }
 
 async function getMovieDetails(movieId) {
   let url = `movie/${movieId}?api_key=${key}`;
-  console.log(url);
   const response = await axios.get(url);
   const data = await response.data;
-  console.log(data);
-  const results = await data.results;
-  console.log(results);
-  return results;
+  // console.log(data);
+  return data;
 }
 
 async function getMovieCredits(movieId) {
   let url = `movie/${movieId}/credits?api_key=${key}`;
   const response = await axios.get(url);
   const data = await response.data;
-  const results = await data.results;
-  console.log(results);
-  return results;
+  const cast = await data.cast;
+  // console.log(cast);
+  return cast;
 }
 
 async function getMovieReviews(movieId) {
@@ -45,7 +42,7 @@ async function getMovieReviews(movieId) {
   const response = await axios.get(url);
   const data = await response.data;
   const results = await data.results;
-  console.log(results);
+  // console.log(results);
   return results;
 }
 

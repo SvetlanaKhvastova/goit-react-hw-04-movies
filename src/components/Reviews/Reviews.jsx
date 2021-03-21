@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import services from '../../services/services';
 import s from './Reviews.module.css';
 
@@ -19,11 +18,13 @@ class Reviews extends Component {
 
   render() {
     const { reviews } = this.state;
+    // console.log(reviews);
+
     return (
       <>
-        <ul>
+        <ul className={s.reviews}>
           {reviews.map(({ id, author, content }) => (
-            <li key={id}>
+            <li key={id} className={s.reviews__link}>
               <h4>{author}</h4>
               <p>{content}</p>
             </li>
@@ -33,9 +34,5 @@ class Reviews extends Component {
     );
   }
 }
-
-Reviews.propTypes = {
-  moviesId: PropTypes.string,
-};
 
 export default Reviews;

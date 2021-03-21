@@ -3,18 +3,19 @@ import { Route, Switch } from 'react-router';
 import services from '../../services/services';
 import Form from '../../components/Form/Form';
 import Spinner from '../../components/Loader/Loader';
+import s from './MoviesPage.module.css';
 const { searchMovies } = services;
 
 const ListFilms = lazy(() => import('../../components/ListFilms/ListFilms'));
 
 class MoviesPage extends Component {
   state = {
-    query: null,
-    searchFilms: null,
+    query: '',
+    searchFilms: [],
   };
 
   componentDidMount() {
-    console.log(`componentDidMount`);
+    // console.log(`componentDidMount`);
     const { pathname, search } = this.props.location;
 
     if (pathname && search) {
@@ -23,7 +24,7 @@ class MoviesPage extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log(`componentDidUpdate`);
+    // console.log(`componentDidUpdate`);
     const { query: prevQuery } = prevState;
     const { query: currentQuery } = this.state;
 
@@ -51,18 +52,22 @@ class MoviesPage extends Component {
 
     return (
       <div>
-        <Form onSubmit={this.onSubmitForm} />
+        <div>
+          <Form onSubmit={this.onSubmitForm} />
 
-        {searchFilms && (
-          <Suspense fallback={<Spinner />}>
-            <Switch>
-              <Route
-                to={`/movies/query=${query}`}
-                render={prop => <ListFilms films={searchFilms} {...prop} />}
-              />
-            </Switch>
-          </Suspense>
-        )}
+          <div className={s.movies__page}>
+            {searchFilms && (
+              <Suspense fallback={<Spinner />}>
+                <Switch>
+                  <Route
+                    to={`/movies/query=${query}`}
+                    render={prop => <ListFilms films={searchFilms} {...prop} />}
+                  />
+                </Switch>
+              </Suspense>
+            )}
+          </div>
+        </div>
       </div>
     );
   }

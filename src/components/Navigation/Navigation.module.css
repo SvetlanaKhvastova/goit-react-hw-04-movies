@@ -1,8 +1,14 @@
 .nav {
+  /* position: sticky; */
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
   padding-bottom: 20px;
+  padding-top: 20px;
+  height: 80px;
+  border-bottom: 3px solid black;
+  margin: 0;
+  font-size: 40px;
 }
 
 .nav__list.active {
