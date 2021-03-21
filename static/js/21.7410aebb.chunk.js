@@ -1,0 +1,2 @@
+(this["webpackJsonpgoit-react-hw-04-movies"]=this["webpackJsonpgoit-react-hw-04-movies"]||[]).push([[21],{80:function(e,i,s){e.exports={reviews:"Reviews_reviews__3Bhr2",reviews__link:"Reviews_reviews__link__DFZk6"}}}]);
+//# sourceMappingURL=21.7410aebb.chunk.js.map
