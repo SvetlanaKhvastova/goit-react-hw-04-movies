@@ -21,7 +21,7 @@
    {
     "id": "3",
     "component": "./pages/MovieDetailsPage/MovieDetailsPage",
-    "name": "MovieDetailsPage",
+    "name": "",
     "props": {
       "to": "/movies/:movieId",
       "exact": false
