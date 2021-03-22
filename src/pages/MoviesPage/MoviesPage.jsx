@@ -4,8 +4,10 @@ import services from '../../services/services';
 import Form from '../../components/Form/Form';
 import Spinner from '../../components/Loader/Loader';
 import s from './MoviesPage.module.css';
-const { searchMovies } = services;
 
+import queryString from 'query-string';
+console.log(queryString);
+const { searchMovies } = services;
 const ListFilms = lazy(() => import('../../components/ListFilms/ListFilms'));
 
 class MoviesPage extends Component {
@@ -16,10 +18,11 @@ class MoviesPage extends Component {
 
   componentDidMount() {
     // console.log(`componentDidMount`);
+
     const { pathname, search } = this.props.location;
 
     if (pathname && search) {
-      this.setState({ query: search });
+      this.setState({ query: queryString.parse(search).query });
     }
   }
 
